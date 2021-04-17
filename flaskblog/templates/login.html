@@ -5,7 +5,6 @@
             {{ form.hidden_tag() }}
             <fieldset class="form-group">
                 <legend class="border-bottom mb-4">Zaloguj się</legend>
-
                 <div class="form-group">
                     {{ form.email.label(class="form-control-label") }}
                     {% if form.email.errors %}
@@ -39,15 +38,15 @@
             </fieldset>
             <div class="form-group">
                 {{ form.submit(class="btn btn-outline-info") }}
-            </div>
-            <small class="text-muted ml-2">
-                <a href="#">Zapomniałeś hasła?</a>
-            </small>
+                <small class="text-muted ml-2">
+                    <a href="{{ url_for('users.reset_request') }}">Zapomniałeś hasła?</a>
+                </small>
+            </div>        
         </form>
     </div>
     <div class="border-top pt-3">
         <small class="text-muted">
-            Nie masz konta? <a class="ml-2" href="{{ url_for('register') }}">Zarejestruj się już teraz</a>
+            Nie masz konta? <a class="ml-2" href="{{ url_for('users.register') }}">Zarejestruj się już teraz</a>
         </small>
     </div>
 {% endblock content %}
